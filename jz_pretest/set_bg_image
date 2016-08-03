@@ -1,0 +1,14 @@
+#!/system/bin/sh
+
+
+#将背景图片地址输入到/system/pretest/image
+#recovery会检测到该地址并刷新该图片
+#不能省略echo，必须有输出被检测到背景才会刷新
+
+picture=$1
+picture="${picture%.*}"
+echo ../../system/pretest/$picture > /system/pretest/image
+
+#cp /system/pretest/$1 /res/images/pretest.png
+echo -e "\n"
+sleep 1

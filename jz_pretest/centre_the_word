@@ -1,0 +1,12 @@
+#!/system/bin/sh
+
+#检测是否是圆屏,若是圆屏将文字输出显示在屏幕中间一排
+if [ "$lcd_exterior" == "square" ];then
+	echo -e "\n\n\n\n\n\n\n\n\n$1\n\n\n\n"
+else
+	if [ "$lcd_exterior" == "round" ];then
+		echo -e "\n\n\n\n\n\n\n\n\n   $1\n\n\n\n"
+	else
+		echo "cannot get the lcd exterior in /proc/hardware/list"
+	fi
+fi
